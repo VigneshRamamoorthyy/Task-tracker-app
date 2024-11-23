@@ -3,6 +3,14 @@ import { v4 as uuidv4 } from "uuid";
 import TaskList from "../TaskList";
 import "./index.css";
 
+const getCurrentDate = () => {
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  return `${year}-${month}-${day}`;
+};
+
 const initialTodoList = [];
 
 const TaskInput = () => {
@@ -11,7 +19,7 @@ const TaskInput = () => {
   const [title, setTitle] = useState(""); // State for the todo title input
   const [description, setDescription] = useState(""); // State for the todo description textarea
   const [isAddDisabled, setIsAddDisabled] = useState(true); // State to disable the add button
-  const [dueDate, setDueDate] = useState("");
+  const [dueDate, setDueDate] = useState(getCurrentDate());
   const [status, setStatus] = useState("Pending"); // State for status dropdown
   const [sortOrder, setSortOrder] = useState("All"); // State for sorting criteria
 
@@ -43,7 +51,7 @@ const TaskInput = () => {
     setTodosList((prevTodos) => [...prevTodos, newTodo]); // Update todosList with new todo
     setTitle(""); // Clear title input
     setDescription(""); // Clear description textarea
-    setDueDate("");
+    setDueDate(getCurrentDate());
     setStatus("Pending");
     setIsAddDisabled(true); // Disable add button after adding todo
   };
