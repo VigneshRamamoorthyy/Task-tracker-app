@@ -1,16 +1,16 @@
-.todos-task-list {
+.tasks-task-list {
   width: 100%;
 }
 
 @media screen and (min-width: 786px) {
-  .todos-task-list {
+  .tasks-task-list {
     width: 30%;
     margin-right: 20px;
     margin-bottom: 16px;
   }
 }
 
-.todos-task-container {
+.tasks-task-container {
   border: #b5b7c4 solid 1.5px;
   border-radius: 8px;
   min-height: 100px;
@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.todos-task-title-description-container {
+.tasks-task-title-description-container {
   margin-left: 10px;
   margin-top: 18px;
   width: 100%; /* Allow the container to take full width */
@@ -34,7 +34,7 @@
   overflow-wrap: break-word; /* Ensure long words wrap */
 }
 
-.todos-task-delete-edit-btn {
+.tasks-task-delete-edit-btn {
   border: 2px red solid;
   width: 20%;
   min-height: 80px;
@@ -44,7 +44,7 @@
   justify-content: center;
 }
 
-.todos-task-delete-edit-btn {
+.tasks-task-delete-edit-btn {
   background-color: transparent;
   font-size: 12px;
   color: #9e9ea5;
@@ -55,7 +55,7 @@
   cursor: pointer;
 }
 
-.todos-task-title {
+.tasks-task-title {
   color: #171f46;
   font-family: Roboto;
   font-size: 16px;
@@ -63,12 +63,12 @@
 }
 
 @media screen and (min-width: 786px) {
-  .todos-task-title {
+  .tasks-task-title {
     font-size: 14px;
   }
 }
 
-.todos-task-description {
+.tasks-task-description {
   color: #9e9ea5;
   font-family: Roboto;
   font-size: 14px;
@@ -78,14 +78,14 @@
   white-space: normal;
 }
 
-.todos-task-status {
+.tasks-task-status {
   color: #232328;
   font-family: Roboto;
   font-size: 14px;
   font-weight: 500;
 }
 
-.todos-task-duedate {
+.tasks-task-duedate {
   color: #232328;
   font-family: Roboto;
   font-size: 14px;

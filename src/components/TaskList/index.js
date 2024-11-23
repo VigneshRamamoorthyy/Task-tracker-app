@@ -5,15 +5,15 @@ import { useState } from "react";
 import CustomEditComponent from "../TaskInput/CustomEditComponent";
 
 const TaskList = (props) => {
-  // Destructure props to get todosDetails, toggleIsCompleted, deleteTodo, and updateTask
-  const { todosDetails, deleteTodo, updateTask } = props;
-  const { id, title, description, dueDate, status } = todosDetails; // Destructure todosDetails
+  // Destructure props to get tasksDetails, deleteTask, and updateTask
+  const { tasksDetails, deleteTask, updateTask } = props;
+  const { id, title, description, dueDate, status } = tasksDetails; // Destructure tasksDetails
 
   const [modalShow, setModalShow] = useState(false); // State for modal visibility
 
   // Event handler for deleting a task
   const onClickDeleteItem = () => {
-    deleteTodo(id);
+    deleteTask(id);
   };
 
   // Callback function to handle updating a task
@@ -22,19 +22,19 @@ const TaskList = (props) => {
   };
 
   return (
-    <li className="todos-task-list">
-      <div className="todos-task-container">
-        <div className="todos-task-title-description-container">
-          <p className="todos-task-title">{title}</p>
-          <p className="todos-task-description">{description}</p>
-          <p className="todos-task-status">{status}</p>
-          <p className="todos-task-duedate">{dueDate}</p>
+    <li className="tasks-task-list">
+      <div className="tasks-task-container">
+        <div className="tasks-task-title-description-container">
+          <p className="tasks-task-title">{title}</p>
+          <p className="tasks-task-description">{description}</p>
+          <p className="tasks-task-status">{status}</p>
+          <p className="tasks-task-duedate">{dueDate}</p>
         </div>
 
-        <div className="todos-task-delete-edit-btn">
+        <div className="tasks-task-delete-edit-btn">
           {/* Button to delete a task */}
           <button
-            className="todos-task-delete-edit-btn"
+            className="tasks-task-delete-edit-btn"
             onClick={onClickDeleteItem}
           >
             <MdOutlineDelete size={20} color="#cc0000" />
@@ -42,7 +42,7 @@ const TaskList = (props) => {
 
           {/* Button to edit a task */}
           <button
-            className="todos-task-delete-edit-btn"
+            className="tasks-task-delete-edit-btn"
             onClick={() => setModalShow(true)}
           >
             <FaRegEdit size={20} color="#66b3ff" />

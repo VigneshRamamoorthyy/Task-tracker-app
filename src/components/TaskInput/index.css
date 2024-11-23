@@ -99,25 +99,25 @@
   margin-top: 20px;
 }
 
-.todos-container {
+.tasks-container {
   width: 90%;
 }
 
-.todos-sort-container {
+.tasks-sort-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
 }
 
-.todos-heading {
+.tasks-heading {
   color: #171f46;
   font-family: Roboto;
   font-size: 20px;
   font-weight: 700;
 }
 
-.todos-lists-container {
+.tasks-lists-container {
   list-style-type: none;
   padding-left: 0px;
   display: flex;
@@ -125,21 +125,22 @@
 }
 
 @media screen and (min-width: 786px) {
-  .todos-lists-container {
+  .tasks-lists-container {
     flex-direction: row;
     flex-wrap: wrap;
   }
 }
 
-.todos-img-container {
+.tasks-img-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 90%;
   margin-bottom: 20px;
 }
+
 @media screen and (min-width: 768px) {
-  .todos-img-container {
+  .tasks-img-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -148,14 +149,14 @@
   }
 }
 
-.todos-img {
+.tasks-img {
   width: 50%;
   height: 80%;
   margin-top: 20px;
 }
 
 @media screen and (max-width: 768px) {
-  .todos-img {
+  .tasks-img {
     display: none;
   }
 }
@@ -171,5 +172,4 @@
 .sort-select-element {
   font-family: Roboto;
   font-size: 14px;
- 
 }

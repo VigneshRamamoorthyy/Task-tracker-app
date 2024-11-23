@@ -11,31 +11,35 @@ function CustomEditComponent(props) {
 
   // Fetch and populate form fields with task details when component mounts
   useEffect(() => {
-    const todosList = JSON.parse(localStorage.getItem("todosList"));
-    const todoItem = todosList.find((item) => item.id === getId);
+    const tasksList = JSON.parse(localStorage.getItem("tasksList"));
+    const taskItem = tasksList.find((item) => item.id === getId);
 
-    if (todoItem) {
-      setTitle(todoItem.title);
-      setDescription(todoItem.description);
-      setStatus(todoItem.status);
-      setDueDate(todoItem.dueDate);
+    if (taskItem) {
+      setTitle(taskItem.title);
+      setDescription(taskItem.description);
+      setStatus(taskItem.status);
+      setDueDate(taskItem.dueDate);
     }
   }, [getId]);
 
   // Handle saving edited task details
   const handleSave = () => {
-    let todosList = JSON.parse(localStorage.getItem("todosList"));
-    const index = todosList.findIndex((item) => item.id === getId);
+    let tasksList = JSON.parse(localStorage.getItem("tasksList"));
+    const index = tasksList.findIndex((item) => item.id === getId);
 
     // Update task details in local storage
-    todosList[index].title = title;
-    todosList[index].description = description;
-    todosList[index].status = status;
-    todosList[index].dueDate = dueDate;
-    localStorage.setItem("todosList", JSON.stringify(todosList));
+    tasksList[index] = {
+      ...tasksList[index],
+      title,
+      description,
+      status,
+      dueDate,
+    };
+
+    localStorage.setItem("tasksList", JSON.stringify(tasksList));
 
     // Update task details in parent component
-    updateTask(todosList[index]);
+    updateTask(tasksList[index]);
 
     // Close the modal
     onHide();
@@ -80,7 +84,7 @@ function CustomEditComponent(props) {
               id="editStatus"
               className="form-control"
               value={status}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setStatus(e.target.value)}
             >
               <option value="Pending">Pending</option>
               <option value="In Progress">In Progress</option>
@@ -88,14 +92,14 @@ function CustomEditComponent(props) {
             </select>
           </div>
           <div className="form-group">
-            <label htmlFor="editStatus">Status</label>
+            <label htmlFor="editDueDate">Due Date</label>
             <input
               type="date"
               className="form-control"
               style={{ marginBottom: "10px" }}
               id="editDueDate"
               value={dueDate}
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setDueDate(e.target.value)}
             />
           </div>
         </form>
