@@ -3,6 +3,7 @@
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  background-size: auto;
 }
 
 .responsive-container {
@@ -39,7 +40,7 @@
 }
 
 .label {
-  color: #b5b7c4;
+  color: #8e8f96;
   font-family: Roboto;
   font-size: 14px;
   margin-bottom: 10px;
@@ -53,7 +54,6 @@
   padding-left: 16px;
   outline: none;
   margin-bottom: 20px;
-  
 }
 
 .description-input-element {
@@ -62,6 +62,27 @@
   outline: none;
   padding: 10px;
   font-family: Roboto;
+  margin-bottom: 14px;
+}
+
+.date-input-element {
+  width: 100%;
+  border-radius: 4px;
+  border: #b5b7c4 solid 1.5px;
+  height: 38px;
+  padding-left: 16px;
+  outline: none;
+  margin-bottom: 20px;
+}
+
+.status-select-element {
+  width: 100%;
+  border-radius: 4px;
+  border: #b5b7c4 solid 1.5px;
+  height: 38px;
+  padding-left: 16px;
+  outline: none;
+  margin-bottom: 20px;
 }
 
 .add-btn {
@@ -82,7 +103,7 @@
   width: 90%;
 }
 
-.todos-starred-container {
+.todos-sort-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -93,22 +114,7 @@
   color: #171f46;
   font-family: Roboto;
   font-size: 20px;
-  font-weight: 500;
-}
-
-.starred-btn {
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 20px;
-  border-color: #9897f0;
-  color: #9897f0;
-  font-family: Roboto;
-  font-size: 12px;
-  height: 24px;
-  width: 74px;
-  text-align: center;
-  padding-top: 2px;
-  cursor: pointer;
+  font-weight: 700;
 }
 
 .todos-lists-container {
@@ -123,15 +129,6 @@
     flex-direction: row;
     flex-wrap: wrap;
   }
-}
-
-.filter-filled {
-  background-color: #9897f0;
-  color: #ffffff;
-}
-
-.filter-empty {
-  background-color: transparent;
 }
 
 .todos-img-container {
@@ -151,8 +148,28 @@
   }
 }
 
+.todos-img {
+  width: 50%;
+  height: 80%;
+  margin-top: 20px;
+}
+
 @media screen and (max-width: 768px) {
   .todos-img {
     display: none;
   }
+}
+
+.sort-label {
+  color: #171f46;
+  font-family: Roboto;
+  font-size: 16px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+
+.sort-select-element {
+  font-family: Roboto;
+  font-size: 14px;
+ 
 }

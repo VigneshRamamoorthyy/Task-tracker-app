@@ -6,6 +6,8 @@ function CustomEditComponent(props) {
   const { getId, onHide, updateTask } = props;
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [status, setStatus] = useState("");
+  const [dueDate, setDueDate] = useState("");
 
   // Fetch and populate form fields with task details when component mounts
   useEffect(() => {
@@ -15,6 +17,8 @@ function CustomEditComponent(props) {
     if (todoItem) {
       setTitle(todoItem.title);
       setDescription(todoItem.description);
+      setStatus(todoItem.status);
+      setDueDate(todoItem.dueDate);
     }
   }, [getId]);
 
@@ -26,6 +30,8 @@ function CustomEditComponent(props) {
     // Update task details in local storage
     todosList[index].title = title;
     todosList[index].description = description;
+    todosList[index].status = status;
+    todosList[index].dueDate = dueDate;
     localStorage.setItem("todosList", JSON.stringify(todosList));
 
     // Update task details in parent component
@@ -67,6 +73,30 @@ function CustomEditComponent(props) {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             ></textarea>
+          </div>
+          <div className="form-group">
+            <label htmlFor="editStatus">Status</label>
+            <select
+              id="editStatus"
+              className="form-control"
+              value={status}
+              onChange={(e) => setTitle(e.target.value)}
+            >
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+          <div className="form-group">
+            <label htmlFor="editStatus">Status</label>
+            <input
+              type="date"
+              className="form-control"
+              style={{ marginBottom: "10px" }}
+              id="editDueDate"
+              value={dueDate}
+              onChange={(e) => setTitle(e.target.value)}
+            />
           </div>
         </form>
       </Modal.Body>
