@@ -12,16 +12,16 @@ A simple Todo application built with React that allows users to add, edit, delet
 
 ## Description
 
-This Todo app is a basic project to demonstrate CRUD (Create, Read, Update, Delete) operations using React. Users can add new tasks, edit existing ones, delete tasks, and mark tasks as completed. The application also uses local storage to persist tasks across browser sessions.
+This Task Management App is a simple and intuitive tool designed to help users organize their tasks. It allows you to perform CRUD (Create, Read, Update, Delete) operations on tasks and provides features to filter tasks by their status. The application is fully responsive and ensures data persistence using local storage.
 
 ## Features
 
-- Add new tasks with a title and description.
-- Edit existing tasks.
-- Delete tasks.
-- Mark tasks as completed.
-- Filter to show only completed tasks.
-- Data persistence using local storage.
+- Create New Tasks: Add tasks with a title, description, due date, and status.
+- Edit Tasks: Update task details as needed.
+- Delete Tasks: Remove tasks that are no longer required.
+- Filter Tasks: Filter tasks by their status (e.g., Pending, In Progress, Completed).
+- Data Persistence: Tasks are stored in local storage to retain them across browser sessions.
+- Responsive Design: Fully responsive UI for both desktop and mobile devices.
 
 ## Installation
 
@@ -29,11 +29,11 @@ To get a local copy up and running follow these simple steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/todo-app.git
+   git clone https://github.com/your-username/Task-tracker-app.git
 
 2. Navigate to the project directory:
    ```bash
-   cd todo-app
+   cd task-tracker-app
 
 3. Install dependencies:
    ```bash
@@ -52,8 +52,9 @@ The app will be available at http://localhost:3000.
 1. React
 2. uuid
 3. Bootstrap
+4. React icons
 
 ## contact 
 
-Your Name - vickyvilliars@gmail.com
-Project Link: https://github.com/VigneshRamamoorthyy/Todos-App.git
+Your Name - vigneshram8090@gmail.com
+Project Link: https://github.com/VigneshRamamoorthyy/Task-tracker-App.git
